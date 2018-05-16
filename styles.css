@@ -1,0 +1,40 @@
+#topbar {
+	background-color: #6f7784;
+}
+h1#title {
+	font-family: "Slabo", sans-serif;
+	word-spacing: 100vw;
+}
+
+#statement{
+	font-family:"Josephin Sans", sans-serif; 
+}
+
+.pagelink {
+
+}
+
+.flexbox {
+	display: flex;
+}
+
+#toplinks.flexbox {
+  flex-direction: row-reverse;
+  position: absolute;
+  left: 60%;
+  
+}
+
+#missionbar{
+	background-color: #F8F8F8;
+}
+
+#main{
+	background-color: #B9B7BA;
+}
+
+#logo {
+  float: left;
+  width: 100px;
+  height: 100px;
+}

@@ -27,10 +27,10 @@ h1#title {
 
 #missionbar{
 	background-color: #F8F8F8;
-}
-
-#main{
-	background-color: #B9B7BA;
+	width:
+	800px; 
+	margin:0 auto;
+	padding:20px 0;
 }
 
 #logo {

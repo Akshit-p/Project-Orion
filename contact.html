@@ -2,59 +2,71 @@
 <!-- This is the about us page for the last straw. -->
 
 <html>
-	<head>
-		
-  		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ubuntu+Mono" rel="stylesheet">
-		<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
-  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css'>
-  <link href="styles.css" rel="stylesheet" type="text/css">
-		<title>The Last Straw</title>
-	</head>
 
-	<body>
-		<nav class="navbar navbar-fixed-top">
-	<div class="container">
-		<div class=" navbar-header">
-			<button class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Navbar test</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ubuntu+Mono" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark nav-color fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="./index.html">
+				<img src="./img/logo.png" width="80px" alt="The Last Straw logo" title="The Last Straw" />
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand a-nav" href="#">The</br>Last</br>Straw</a>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link active" href="#">About Us</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./live.html">Live Feed</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./store.html">Store</a>
+					</li>
+				</ul>
+			</div>
 		</div>
-		<div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a class="a-nav" href="#about">Home</a></li>
-				<li><a class="a-nav"href="#portfolio">Live Feed</a></li>
-				<li><a class="a-nav"href="#contact">Store</a></li>
-			</ul>
-		</div>
+	</nav>
+
+	<div class="container" id="main">
+		<h1>About us!</h1>
+		<p>Facebook: </p>
+		<p>Instagram: </p>
+
+		<h1>Contact us!</h1>
+		<p>Email address: ---- </p>
+		<p>Phone Number: ---- </p>
+
+
+		<P>Type a message, and we will try to respond as soon as possible!</P>
+
+		<form action="" method="POST">
+			<label>Name:
+				<input id="name" type="text" name="name" size="25">
+			</label>
+			<br />
+			<br />
+			<label>Email address:
+				<input id="email" type="email" name="_replyto" size="25">
+			</label>
+			<br />
+			<br />
+			<textarea name="message" rows="10" cols="50" placeholder="Type your message here..."></textarea>
+			<br />
+			<input id="submit" type="submit" value="Send">
+		</form>
 	</div>
-</nav>
+</body>
 
-		<div id="main">
-			<h1>About us!</h1>
-			<p>Facebook: </p>
-			<p>Instagram: </p>
-
-			<h1>Contact us!</h1>
-			<p>Email address: ---- </p>
-			<p>Phone Number: ---- </p>
-
-
-			<P>Type a message, and we will try to respond as soon as possible!</P>
-
-			<form action="" method="POST">
-    		<label>Name: <input id="name" type="text" name="name" size="25"></label>
-				<br />
-				<br />
-    		<label>Email address: <input id="email" type="email" name="_replyto" size="25"></label>
-				<br />
-				<br />
-				<textarea name="message" rows="10" cols="50" placeholder="Type your message here..."></textarea>
-				<br />
-    		<input id="submit" type="submit" value="Send">
-			</form>
-		</div>
-	</body>
 </html>

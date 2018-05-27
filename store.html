@@ -3,71 +3,270 @@
 
 <head>
 	<meta charset="UTF-8">
-	<!--<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
-  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />/!-->
-	<title>The LastStraw Store Page</title>
+	<title>Store</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ubuntu+Mono" rel="stylesheet">
+	<script src="./vue.min.js.download"></script>
 	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="store.css">
 </head>
 
 <body translate="no">
 	<nav class="navbar navbar-expand-md navbar-dark nav-color fixed-top">
 		<div class="container">
 			<a class="navbar-brand" href="./index.html">
-				<img src="./img/logo.png" width="80px" alt="The Last Straw logo" title="The Last Straw" />
+				<img src="./img/strawlogo.svg" width="80px" alt="The Last Straw logo" title="The Last Straw" />
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="navbar-nav ml-auto">
+				<ul class="navbar-nav ml-auto text-center">
 					<li class="nav-item">
-						<a class="nav-link" href="./contact.html">About Us</a>
+						<a class="nav-link a-nav" href="./contact.html">About Us</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="./live.html">Live Feed</a>
+					<li class="">
+						<a class="nav-link a-nav" href="./live.html">Live Feed</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link active" href="">Store</a>
+					<li class="">
+						<a class="nav-link a-nav active" href="">Store</a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<div class="container">
-		<section id="portfolio">
-			<h2>Store</h2>
-			<div class="row" id="placeholder">
-				<div class="col-xs-12 col-sm-6 col-lg-4">
-					<img class="img-fluid img-thumbnail" src="http://beesworlds.com/wp-content/themes/newsy/themify/img.php?src=http://themify.me/demo/themes/wp-content/uploads/image-placeholder.jpg&w=469&h=&zc=1">
+	<div id="products">
+		<div class="rela-block page-section top-section">
+			<div class="gutter-container">
+				<div class="rela-block section-nav">
+					<h2 class="left">New Item Showcase</h2>
 				</div>
-				<div class="col-xs-12 col-sm-6 col-lg-4 image">
-					<img class="img-fluid img-thumbnail" src="http://beesworlds.com/wp-content/themes/newsy/themify/img.php?src=http://themify.me/demo/themes/wp-content/uploads/image-placeholder.jpg&w=469&h=&zc=1">
-				</div>
-				<div class="col-xs-12 col-sm-6 col-lg-4 image">
-					<img class="img-fluid img-thumbnail" src="http://beesworlds.com/wp-content/themes/newsy/themify/img.php?src=http://themify.me/demo/themes/wp-content/uploads/image-placeholder.jpg&w=469&h=&zc=1">
-				</div>
-				<div class="col-xs-12 col-sm-6 col-lg-4 image">
-					<img class="img-fluid img-thumbnail" src="http://beesworlds.com/wp-content/themes/newsy/themify/img.php?src=http://themify.me/demo/themes/wp-content/uploads/image-placeholder.jpg&w=469&h=&zc=1">
-				</div>
-				<div class="col-xs-12 col-sm-6 col-lg-4 image">
-					<img class="img-fluid img-thumbnail" src="http://beesworlds.com/wp-content/themes/newsy/themify/img.php?src=http://themify.me/demo/themes/wp-content/uploads/image-placeholder.jpg&w=469&h=&zc=1">
-				</div>
-				<div class="col-xs-12 col-sm-6 col-lg-4 image">
-					<img class="img-fluid img-thumbnail" src="http://beesworlds.com/wp-content/themes/newsy/themify/img.php?src=http://themify.me/demo/themes/wp-content/uploads/image-placeholder.jpg&w=469&h=&zc=1">
+				<div class="rela-block new-item-container">
+					<div class="vert-center move-arrow left-arrow disabled">&lt;</div>
+					<div class="vert-center move-arrow right-arrow shadow">&gt;</div>
+					<div class="inner-moving-container" style="left: 1px;">
+						<div class="rela-inline new-item" style="background: url(&quot;http://lorempixel.com/200/200/abstract/1/&quot;) center center no-repeat; animation-delay: 0s;">
+							<div class="new-item-info">
+								<p class="abs-center">product1</p>
+							</div>
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-inline new-item" style="background: url(&quot;http://lorempixel.com/200/200/abstract/2/&quot;) center center no-repeat; animation-delay: 0s;">
+							<div class="new-item-info">
+								<p class="abs-center">product2</p>
+							</div>
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-inline new-item" style="background: url(&quot;http://lorempixel.com/200/200/abstract/3/&quot;) center center no-repeat; animation-delay: 0s;">
+							<div class="new-item-info">
+								<p class="abs-center">product3</p>
+							</div>
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-inline new-item" style="background: url(&quot;http://lorempixel.com/200/200/abstract/4/&quot;) center center no-repeat; animation-delay: 0s;">
+							<div class="new-item-info">
+								<p class="abs-center">product4</p>
+							</div>
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-inline new-item" style="background: url(&quot;http://lorempixel.com/200/200/abstract/5/&quot;) center center no-repeat; animation-delay: 0s;">
+							<div class="new-item-info">
+								<p class="abs-center">product5</p>
+							</div>
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-inline new-item" style="background: url(&quot;http://lorempixel.com/200/200/abstract/6/&quot;) center center no-repeat; animation-delay: 0s;">
+							<div class="new-item-info">
+								<p class="abs-center">product6</p>
+							</div>
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-inline new-item" style="background: url(&quot;http://lorempixel.com/200/200/abstract/7/&quot;) center center no-repeat; animation-delay: 0s;">
+							<div class="new-item-info">
+								<p class="abs-center">product7</p>
+							</div>
+							<div class="product-view-button">View</div>
+						</div>
+					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+		<div class="rela-block page-section grey product-section">
+			<div class="rela-block gutter-container">
+				<div class="rela-block section-nav">
+					<h2 class="left">All Products
+						<span style="display: none;">/All</span>
+					</h2>
+					<div class="right category-select">
+						<div class="rela-inline category active">All</div>
+						<div class="rela-inline category">T-shirts</div>
+						<div class="rela-inline category">Caps</div>
+						<div class="rela-inline category">Permanent Straws</div>
+					</div>
+				</div>
+				<div class="rela-block product-item-container">
+					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
+						<div class="rela-block product-pic" style="background: url(&quot;http://lorempixel.com/600/600/abstract/&quot;) center center no-repeat;">
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-block product-info">
+							<div class="rela-block">
+								<p>Test</p>
+								<p class="product-artist">Test</p>
+							</div>
+							<div class="vert-center product-cost">$0</div>
+						</div>
+					</div>
+					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
+						<div class="rela-block product-pic" style="background: url(&quot;http://lorempixel.com/200/200/nature/&quot;) center center no-repeat;">
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-block product-info">
+							<div class="rela-block">
+								<p>abc xyz</p>
+								<p class="product-artist">abc xyz</p>
+							</div>
+							<div class="vert-center product-cost">$15</div>
+						</div>
+					</div>
+					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
+						<div class="rela-block product-pic" style="background: url(&quot;http://lorempixel.com/200/200/abstract/&quot;) center center no-repeat;">
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-block product-info">
+							<div class="rela-block">
+								<p>abc xyz</p>
+								<p class="product-artist">abc xyz</p>
+							</div>
+							<div class="vert-center product-cost">$15</div>
+						</div>
+					</div>
+					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
+						<div class="rela-block product-pic" style="background: url(&quot;http://lorempixel.com/200/200/nature/&quot;) center center no-repeat;">
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-block product-info">
+							<div class="rela-block">
+								<p>abc xyz</p>
+								<p class="product-artist">abc xyz</p>
+							</div>
+							<div class="vert-center product-cost">$15</div>
+						</div>
+					</div>
+					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
+						<div class="rela-block product-pic" style="background: url(&quot;http://lorempixel.com/200/200/abstract/&quot;) center center no-repeat;">
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-block product-info">
+							<div class="rela-block">
+								<p>abc xyz</p>
+								<p class="product-artist">abc xyz</p>
+							</div>
+							<div class="vert-center product-cost">$15</div>
+						</div>
+					</div>
+					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
+						<div class="rela-block product-pic" style="background: url(&quot;http://lorempixel.com/200/200/nature/&quot;) center center no-repeat;">
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-block product-info">
+							<div class="rela-block">
+								<p>abc xyz</p>
+								<p class="product-artist">abc xyz</p>
+							</div>
+							<div class="vert-center product-cost">$15</div>
+						</div>
+					</div>
+					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
+						<div class="rela-block product-pic" style="background: url(&quot;http://lorempixel.com/200/200/abstract/&quot;) center center no-repeat;">
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-block product-info">
+							<div class="rela-block">
+								<p>abc xyz</p>
+								<p class="product-artist">abc xyz</p>
+							</div>
+							<div class="vert-center product-cost">$15</div>
+						</div>
+					</div>
+					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
+						<div class="rela-block product-pic" style="background: url(&quot;http://lorempixel.com/200/200/nature/&quot;) center center no-repeat;">
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-block product-info">
+							<div class="rela-block">
+								<p>abc xyz</p>
+								<p class="product-artist">abc xyz</p>
+							</div>
+							<div class="vert-center product-cost">$15</div>
+						</div>
+					</div>
+					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
+						<div class="rela-block product-pic" style="background: url(&quot;http://lorempixel.com/200/200/abstract/&quot;) center center no-repeat;">
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-block product-info">
+							<div class="rela-block">
+								<p>abc xyz</p>
+								<p class="product-artist">abc xyz</p>
+							</div>
+							<div class="vert-center product-cost">$15</div>
+						</div>
+					</div>
+					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
+						<div class="rela-block product-pic" style="background: url(&quot;http://lorempixel.com/200/200/nature/&quot;) center center no-repeat;">
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-block product-info">
+							<div class="rela-block">
+								<p>abc xyz</p>
+								<p class="product-artist">abc xyz</p>
+							</div>
+							<div class="vert-center product-cost">$15</div>
+						</div>
+					</div>
+					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
+						<div class="rela-block product-pic" style="background: url(&quot;http://lorempixel.com/200/200/nature/&quot;) center center no-repeat;">
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-block product-info">
+							<div class="rela-block">
+								<p>abc xyz</p>
+								<p class="product-artist">abc xyz</p>
+							</div>
+							<div class="vert-center product-cost">$15</div>
+						</div>
+					</div>
+					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
+						<div class="rela-block product-pic" style="background: url(&quot;http://lorempixel.com/200/200/abstract/&quot;) center center no-repeat;">
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-block product-info">
+							<div class="rela-block">
+								<p>abc xyz</p>
+								<p class="product-artist">abc xyz</p>
+							</div>
+							<div class="vert-center product-cost">$15</div>
+						</div>
+					</div>
+					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
+						<div class="rela-block product-pic" style="background: url(&quot;http://lorempixel.com/600/600/nature/&quot;) center center no-repeat;">
+							<div class="product-view-button">View</div>
+						</div>
+						<div class="rela-block product-info">
+							<div class="rela-block">
+								<p>abc xyz</p>
+								<p class="product-artist">abc xyz</p>
+							</div>
+							<div class="vert-center product-cost">$15</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-
-
-
-
-
-
 </body>
 
 </html>

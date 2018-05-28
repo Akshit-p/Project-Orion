@@ -44,9 +44,8 @@
 							<h2 class="left">New Item Showcase</h2>
 						</div>
 						<div class="rela-block new-item-container">
-							<div :class="['vert-center', 'move-arrow', 'left-arrow', newItemPos<=0?'disabled':'']" @click="updateNewItemPos(-1)">
-							</div>
-							<div :class="['vert-center', 'move-arrow', 'right-arrow', newItemPos>=(newItems.length-1)?'disabled':'']" @click="updateNewItemPos(1)">></div>
+							<div :class="['vert-center', 'move-arrow', 'left-arrow', newItemPos<=0?'disabled':'']" @click="updateNewItemPos(-1)">&lt;</div>
+							<div :class="['vert-center', 'move-arrow', 'right-arrow', newItemPos>=(newItems.length-1)?'disabled':'']" @click="updateNewItemPos(1)">&gt;</div>
 							<div class="inner-moving-container" :style="{'left': ((newItemPos * -320)+1)+'px'}">
 								<div v-for="(ni,index) in newItems" class="rela-inline new-item" :style="{'background': 'url(\''+ni.img+'\') center no-repeat', 'animation-delay': (index*0.1)+'s'}">
 									<div class="new-item-info">

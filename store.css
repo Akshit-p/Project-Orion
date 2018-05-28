@@ -229,8 +229,6 @@ div#store {
 
 .product-view-button {
   position: absolute;
-  top: ;
-  left: ;
   right: 10px;
   bottom: 10px;
   padding: 6px 12px;
@@ -296,7 +294,6 @@ div#store {
   position: fixed;
   top: 0;
   left: 100%;
-  right: ;
   bottom: 0;
   width: 100%;
   padding: 10px 0;

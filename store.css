@@ -1,3 +1,4 @@
+
 .abs-center {
   position: absolute;
   top: 50%;
@@ -29,6 +30,7 @@
 }
 
 body {
+  padding-top: 120px; 
   transition: 0s;
   font-family: 'Roboto Slab', serif;
   overflow-x: hidden;
@@ -49,6 +51,26 @@ h3 {
   margin-bottom: 15px;
 }
 
+div#store {
+  padding-top: 200px;
+}
+
+.page-container {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 18px -1px rgba(0, 0, 0, 0.2);
+}
+
+.page-container.shifted {
+  left: 300px;
+}
+
 .gutter-container {
   padding: 0 40px;
   max-width: 1200px;
@@ -62,6 +84,24 @@ h3 {
 
 .page-section.grey {
   background-color: #f4f4f4;
+}
+
+.icon-split {
+  vertical-align: middle;
+  height: 40px;
+  width: 1px;
+  background-color: #e6e6e6;
+  margin: 0 5px 0 8px;
+}
+
+.button-svg {
+  transition: 0s;
+  vertical-align: middle;
+  height: 35px;
+  stroke: #d1d1d1;
+  stroke-width: 3;
+  stroke-linecap: round;
+  fill: none;
 }
 
 .new-item-container {
@@ -225,6 +265,116 @@ h3 {
 .category:hover,
 .category.active {
   color: #333;
+}
+
+.load-button {
+  text-align: center;
+}
+
+.load-button-container {
+  padding: 8px 20px;
+  cursor: pointer;
+}
+
+.load-button-container path {
+  d: path("M 5 10 L 25 25 L 45 10");
+}
+
+.load-button-container:hover path {
+  d: path("M 5 22 L 25 37 L 45 22");
+}
+
+.footer {
+  padding: 30px 0;
+  background-color: #f4f4f4;
+  overflow: hidden;
+  text-align: center;
+}
+
+.product-view-container {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  right: ;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  overflow-y: auto;
+  background-color: #fff;
+  box-shadow: 0 1px 10px -1px rgba(0, 0, 0, 0.4);
+  transition: 0.5s cubic-bezier(0.6, 0, 0.2, 1);
+}
+
+.product-view-container.active {
+  left: 0;
+}
+
+.product-view-container .section-nav {
+  margin-bottom: 0;
+}
+
+.pv-container {
+  margin: 30px 0 60px;
+}
+
+.pv-container .pv-info {
+  background-color: #f4f4f4;
+}
+
+.pv-pic {
+  height: 460px;
+  width: 460px;
+  margin: auto;
+  background-size: cover !important;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.pv-info {
+  padding: 20px;
+}
+
+.pv-info h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.pv-info h3 {
+  color: #b2b2b2;
+  margin-bottom: 30px;
+}
+
+.info-row {
+  display: flex;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+
+.info-row .left {
+  flex: 1 1 0;
+  min-width: 120px;
+  width: auto;
+  padding-right: 20px;
+}
+
+.info-row .text {
+  flex: 4 1 0;
+}
+
+.close-button {
+  height: 32px;
+  width: 32px;
+  border: 1px solid #e6e6e6;
+  cursor: pointer;
+}
+
+.close-button svg {
+  height: 30px;
+  vertical-align: top;
+}
+
+.close-button:hover svg {
+  stroke: #333;
 }
 
 @-webkit-keyframes slideIn {

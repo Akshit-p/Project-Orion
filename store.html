@@ -36,236 +36,91 @@
 			</div>
 		</div>
 	</nav>
-	<div id="products">
-		<div class="rela-block page-section top-section">
-			<div class="gutter-container">
-				<div class="rela-block section-nav">
-					<h2 class="left">New Item Showcase</h2>
+	<div id="store">
+			<div :class="['rela-block', 'page-container']" style="padding-top: 120px">
+				<div class="rela-block page-section top-section">
+					<div class="gutter-container">
+						<div class="rela-block section-nav">
+							<h2 class="left">New Item Showcase</h2>
+						</div>
+						<div class="rela-block new-item-container">
+							<div :class="['vert-center', 'move-arrow', 'left-arrow', newItemPos<=0?'disabled':'']" @click="updateNewItemPos(-1)">
+							</div>
+							<div :class="['vert-center', 'move-arrow', 'right-arrow', newItemPos>=(newItems.length-1)?'disabled':'']" @click="updateNewItemPos(1)">></div>
+							<div class="inner-moving-container" :style="{'left': ((newItemPos * -320)+1)+'px'}">
+								<div v-for="(ni,index) in newItems" class="rela-inline new-item" :style="{'background': 'url(\''+ni.img+'\') center no-repeat', 'animation-delay': (index*0.1)+'s'}">
+									<div class="new-item-info">
+										<p class="abs-center">{{ni.name}}
+											<br>{{ni.artist}}</p>
+									</div>
+									<div class="product-view-button" @click="viewProduct(ni.id)">View</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="rela-block new-item-container">
-					<div class="vert-center move-arrow left-arrow disabled">&lt;</div>
-					<div class="vert-center move-arrow right-arrow shadow">&gt;</div>
-					<div class="inner-moving-container" style="left: 1px;">
-						<div class="rela-inline new-item" style="background: url(&quot;https://picsum.photos/400/?image=1069&quot;) center center no-repeat; animation-delay: 0s;">
-							<div class="new-item-info">
-								<p class="abs-center">product1</p>
+				<div class="rela-block page-section grey product-section">
+					<div class="rela-block gutter-container">
+						<div class="rela-block section-nav">
+							<h2 class="left">All Products
+								<span v-show="currentCatg !== 'All'">/{{currentCatg}}</span>
+							</h2>
+							<div class="right category-select">
+								<div v-for="c in catg" :class="['rela-inline', 'category', currentCatg===c?'active':'']" @click="currentCatg = c; updateFilteredProducts()">{{c}}</div>
 							</div>
-							<div class="product-view-button">View</div>
 						</div>
-						<div class="rela-inline new-item" style="background: url(&quot;https://picsum.photos/400/?image=1051&quot;) center center no-repeat; animation-delay: 0s;">
-							<div class="new-item-info">
-								<p class="abs-center">product2</p>
-							</div>
-							<div class="product-view-button">View</div>
+						<div class="rela-block product-item-container">
+							<product-comp v-for="(item,index) in displayedProducts" :info="item"></product-comp>
 						</div>
-						<div class="rela-inline new-item" style="background: url(&quot;https://picsum.photos/400/?image=1041&quot;) center center no-repeat; animation-delay: 0s;">
-							<div class="new-item-info">
-								<p class="abs-center">product3</p>
+						<div v-show="this.displayPos < this.filteredProducts.length" class="rela-block load-button">
+							<div class="rela-inline load-button-container" @click="addDisplayedProducts">
+								<p>Load More</p>
+								<svg viewbox="0 0 50 50" class="button-svg">
+									<path />
+								</svg>
 							</div>
-							<div class="product-view-button">View</div>
 						</div>
-						<div class="rela-inline new-item" style="background: url(&quot;https://picsum.photos/400/?image=973&quot;) center center no-repeat; animation-delay: 0s;">
-							<div class="new-item-info">
-								<p class="abs-center">product4</p>
-							</div>
-							<div class="product-view-button">View</div>
+					</div>
+				</div>
+			</div>
+	
+			<div :class="['product-view-container', productViewOpen?'active':'']" style="padding-top: 120px">
+				<div class="rela-block gutter-container">
+					<div class="rela-block section-nav">
+						<h2 class="left">Product View</h2>
+						<div class="rela-inline right close-button" @click="productViewOpen = false">
+							<svg viewbox="0 0 30 30" class="button-svg">
+								<path d="M 8 8 L 22 22" />
+								<path d="M 22 8 L 8 22" />
+							</svg>
 						</div>
-						<div class="rela-inline new-item" style="background: url(&quot;https://picsum.photos/400/?image=106&quot;) center center no-repeat; animation-delay: 0s;">
-							<div class="new-item-info">
-								<p class="abs-center">product5</p>
+					</div>
+					<div class="rela-block pv-container">
+						<div class="rela-block pv-pic" :style="{'background': 'url(\''+viewedProduct.img+'\') center no-repeat'}"></div>
+					</div>
+					<div class="rela-block pv-container">
+						<div class="rela-block pv-info">
+							<h2 class="rela-block">{{viewedProduct.name}}</h2>
+							<h3 class="rela-block">{{viewedProduct.artist}}</h3>
+							<div class="rela-block info-row">
+								<div class="rela-inline left">Release Date: </div>
+								<div class="rela-block text" v-html="viewedProduct.date||'No Release Date'"></div>
 							</div>
-							<div class="product-view-button">View</div>
-						</div>
-						<div class="rela-inline new-item" style="background: url(&quot;https://picsum.photos/400/?image=10&quot;) center center no-repeat; animation-delay: 0s;">
-							<div class="new-item-info">
-								<p class="abs-center">product6</p>
+							<div class="rela-block info-row">
+								<div class="rela-inline left">Product Category: </div>
+								<div class="rela-block text" v-html="viewedProduct.catg||'No Category'"></div>
 							</div>
-							<div class="product-view-button">View</div>
-						</div>
-						<div class="rela-inline new-item" style="background: url(&quot;https://picsum.photos/400/?image=69&quot;) center center no-repeat; animation-delay: 0s;">
-							<div class="new-item-info">
-								<p class="abs-center">product7</p>
+							<div class="rela-block info-row">
+								<div class="rela-inline left">Product Description: </div>
+								<div class="rela-block text" v-html="viewedProduct.desc||'No Description'"></div>
 							</div>
-							<div class="product-view-button">View</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="rela-block page-section grey product-section">
-			<div class="rela-block gutter-container">
-				<div class="rela-block section-nav">
-					<h2 class="left">All Products
-						<span style="display: none;">/All</span>
-					</h2>
-					<div class="right category-select">
-						<div class="rela-inline category active">All</div>
-						<div class="rela-inline category">T-shirts</div>
-						<div class="rela-inline category">Caps</div>
-						<div class="rela-inline category">Permanent Straws</div>
-					</div>
-				</div>
-				<div class="rela-block product-item-container">
-					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
-						<div class="rela-block product-pic" style="background: url(&quot;https://picsum.photos/400/?image=123&quot;) center center no-repeat;">
-							<div class="product-view-button">View</div>
-						</div>
-						<div class="rela-block product-info">
-							<div class="rela-block">
-								<p>Test</p>
-								<p class="product-artist">Test</p>
-							</div>
-							<div class="vert-center product-cost">$0</div>
-						</div>
-					</div>
-					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
-						<div class="rela-block product-pic" style="background: url(&quot;https://picsum.photos/400/?image=106&quot;) center center no-repeat;">
-							<div class="product-view-button">View</div>
-						</div>
-						<div class="rela-block product-info">
-							<div class="rela-block">
-								<p>abc xyz</p>
-								<p class="product-artist">abc xyz</p>
-							</div>
-							<div class="vert-center product-cost">$15</div>
-						</div>
-					</div>
-					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
-						<div class="rela-block product-pic" style="background: url(&quot;https://picsum.photos/400/?image=109&quot;) center center no-repeat;">
-							<div class="product-view-button">View</div>
-						</div>
-						<div class="rela-block product-info">
-							<div class="rela-block">
-								<p>abc xyz</p>
-								<p class="product-artist">abc xyz</p>
-							</div>
-							<div class="vert-center product-cost">$15</div>
-						</div>
-					</div>
-					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
-						<div class="rela-block product-pic" style="background: url(&quot;https://picsum.photos/400/?image=169&quot;) center center no-repeat;">
-							<div class="product-view-button">View</div>
-						</div>
-						<div class="rela-block product-info">
-							<div class="rela-block">
-								<p>abc xyz</p>
-								<p class="product-artist">abc xyz</p>
-							</div>
-							<div class="vert-center product-cost">$15</div>
-						</div>
-					</div>
-					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
-						<div class="rela-block product-pic" style="background: url(&quot;https://picsum.photos/400/?image=126&quot;) center center no-repeat;">
-							<div class="product-view-button">View</div>
-						</div>
-						<div class="rela-block product-info">
-							<div class="rela-block">
-								<p>abc xyz</p>
-								<p class="product-artist">abc xyz</p>
-							</div>
-							<div class="vert-center product-cost">$15</div>
-						</div>
-					</div>
-					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
-						<div class="rela-block product-pic" style="background: url(&quot;https://picsum.photos/400/?image=1067&quot;) center center no-repeat;">
-							<div class="product-view-button">View</div>
-						</div>
-						<div class="rela-block product-info">
-							<div class="rela-block">
-								<p>abc xyz</p>
-								<p class="product-artist">abc xyz</p>
-							</div>
-							<div class="vert-center product-cost">$15</div>
-						</div>
-					</div>
-					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
-						<div class="rela-block product-pic" style="background: url(&quot;https://picsum.photos/400/?image=178&quot;) center center no-repeat;">
-							<div class="product-view-button">View</div>
-						</div>
-						<div class="rela-block product-info">
-							<div class="rela-block">
-								<p>abc xyz</p>
-								<p class="product-artist">abc xyz</p>
-							</div>
-							<div class="vert-center product-cost">$15</div>
-						</div>
-					</div>
-					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
-						<div class="rela-block product-pic" style="background: url(&quot;https://picsum.photos/400/?image=1061&quot;) center center no-repeat;">
-							<div class="product-view-button">View</div>
-						</div>
-						<div class="rela-block product-info">
-							<div class="rela-block">
-								<p>abc xyz</p>
-								<p class="product-artist">abc xyz</p>
-							</div>
-							<div class="vert-center product-cost">$15</div>
-						</div>
-					</div>
-					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
-						<div class="rela-block product-pic" style="background: url(&quot;https://picsum.photos/400/?image=116&quot;) center center no-repeat;">
-							<div class="product-view-button">View</div>
-						</div>
-						<div class="rela-block product-info">
-							<div class="rela-block">
-								<p>abc xyz</p>
-								<p class="product-artist">abc xyz</p>
-							</div>
-							<div class="vert-center product-cost">$15</div>
-						</div>
-					</div>
-					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
-						<div class="rela-block product-pic" style="background: url(&quot;https://picsum.photos/400/?image=1019&quot;) center center no-repeat;">
-							<div class="product-view-button">View</div>
-						</div>
-						<div class="rela-block product-info">
-							<div class="rela-block">
-								<p>abc xyz</p>
-								<p class="product-artist">abc xyz</p>
-							</div>
-							<div class="vert-center product-cost">$15</div>
-						</div>
-					</div>
-					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
-						<div class="rela-block product-pic" style="background: url(&quot;https://picsum.photos/400/?image=1015&quot;) center center no-repeat;">
-							<div class="product-view-button">View</div>
-						</div>
-						<div class="rela-block product-info">
-							<div class="rela-block">
-								<p>abc xyz</p>
-								<p class="product-artist">abc xyz</p>
-							</div>
-							<div class="vert-center product-cost">$15</div>
-						</div>
-					</div>
-					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
-						<div class="rela-block product-pic" style="background: url(&quot;https://picsum.photos/400/?image=134&quot;) center center no-repeat;">
-							<div class="product-view-button">View</div>
-						</div>
-						<div class="rela-block product-info">
-							<div class="rela-block">
-								<p>abc xyz</p>
-								<p class="product-artist">abc xyz</p>
-							</div>
-							<div class="vert-center product-cost">$15</div>
-						</div>
-					</div>
-					<div class="rela-inline product-card" style="animation-delay: 0.1s;">
-						<div class="rela-block product-pic" style="background: url(&quot;https://picsum.photos/600/?image=976&quot;) center center no-repeat;">
-							<div class="product-view-button">View</div>
-						</div>
-						<div class="rela-block product-info">
-							<div class="rela-block">
-								<p>abc xyz</p>
-								<p class="product-artist">abc xyz</p>
-							</div>
-							<div class="vert-center product-cost">$15</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+		<script src="./store.js"></script>
 </body>
 
 </html>

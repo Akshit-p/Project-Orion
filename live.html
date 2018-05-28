@@ -9,7 +9,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/codebird-js/codebird.js"></script>
+    <script src="bower_components/doT/doT.min.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="bower_components/moment/locale/it.js"></script>
+    <script src="js/jquery.socialfeed.js"></script>
+    <link href="css/jquery.socialfeed.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -36,7 +44,72 @@
             </div>
         </div>
     </nav>
-    
+    <div class="social-feed-container">
+
+    </div>
+    <script>
+            $(document).ready(function(){
+                $('.social-feed-container').socialfeed({
+                // FACEBOOK
+                facebook: {
+                    accounts: "@spotify",
+                    limit: 2,
+                    access_token: '150849908413827|a20e87978f1ac491a0c4a721c961b68c'
+                },
+                // GOOGLEPLUS
+                google: {
+                    accounts: "@spotify",
+                    limit: 2,
+                    access_token: 'AIzaSyDAelFmJhg6BSUbSLe8UT7s-G53tL4_KRg'
+                },
+                // Twitter
+                twitter: {
+                    accounts: "@spotify",
+                    limit: 2,
+                    consumer_key: 'qzRXgkI7enflNJH1lWFvujT2P', // make sure to have your app read-only
+                    consumer_secret: '8e7E7gHuTwyDHw9lGQFO73FcUwz9YozT37lEvZulMq8FXaPl8O', // make sure to have your app read-only
+                },
+                // VKONTAKTE
+                vk: {
+                    accounts: "@spotify",
+                    limit: 2,
+                    source: 'all'
+                },
+                // INSTAGRAM
+                instagram: {
+                    accounts: "@spotify",
+                    limit: 2,
+                    client_id: 'cd3f3223967b4a78a7ec71a5391ad75c',
+                    access_token: ''
+                },
+
+                // GENERAL SETTINGS
+                length: 200,
+                show_media: true,
+                template : "template.html",
+                // Moderation function - if returns false, template will have class hidden
+                moderation: function(content) {
+                    return (content.text) ? content.text.indexOf('porn') == -1 : true;
+                },
+                //update_period: 5000,
+                // When all the posts are collected and displayed - this function is evoked
+                callback: function() {
+                    console.log('all posts are collected');
+                }
+            });                                   
+            });
+        </script>
+    <footer class="nav-color footer">
+            <p class="motto">#BeStrawless</p>
+            <br />
+            <a href="https://www.facebook.com/The-Last-Straw-780448742165911/"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com/uwthelaststraw/"><i class="fab fa-instagram"></i></a>
+            <a href="https://medium.com/@navedtk09/why-we-care-c1761031181"><i class="fab fa-medium"></i></a>
+            <i class="fab fa-snapchat-square"></i>
+            <br />
+            <br />
+            <p class="name">The Last Straw &copy; 2018</p>
+        </footer>
 </body>
 
 </html>

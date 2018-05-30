@@ -1,6 +1,16 @@
+@font-face {
+	font-family: 'Bebas Neue';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Bebas Neue'), url('../BebasNeue.woff') format('woff');
+}
+html {
+	height: 100%;
+}
 body {
 	padding-top: 120px;
-	font-family: 'Roboto Slab', serif;
+	padding-bottom: 120px;
+	font-family: 'Ubuntu', sans-serif;
 	background-image: url("../img/what-the-hex.png");
 }
 /*
@@ -15,6 +25,10 @@ body {
 	/*background: linear-gradient(135deg, #ffffffc2 30%,#070564e0,#310579); */
 	background: linear-gradient(135deg, #ffffffc2 30%,#6463b6e0,#4a3074);
 	box-shadow: 0px 8px 100px 0px #C1BFBF;
+}
+
+#myNavbar {
+	font-family: 'Ubuntu', sans-serif;
 }
 
 .video-container {
@@ -61,16 +75,6 @@ body {
 	border-radius: 5px;
 	font-size: 16px;
 }
-/*
-#footer {
-	background-color:rgba(49,5,121,0.75);
-	padding-bottom: 6em;
-	margin-top: 4em;
-	left: 0;
-	right: 0;
-	position: absolute;
-}
-*/
 
 #slogan {
 	color: white;
@@ -179,3 +183,26 @@ footer a:hover{
 	  width: auto;
 	  height: 100%;
 	}
+}
+.hidden {
+	display: none;
+}
+
+.mainc {
+	text-align: center;
+}
+
+.textcontainer p{
+	color: white;
+	font-family: 'Bebas Neue', 'Ubuntu', sans-serif;
+	line-height: .8;
+	font-size: 50pt;
+	display: inline-block;
+    text-align: left;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	margin-top: 275px;
+}

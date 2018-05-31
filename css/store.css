@@ -1,9 +1,32 @@
-@font-face {
-	font-family: 'Bebas Neue';
-	font-style: normal;
-	font-weight: normal;
-	src: local('Bebas Neue'), url('../BebasNeue.woff') format('woff');
+.nav-color{
+  /*background: linear-gradient(135deg,#0fb8ad 20%,#1fc8db, #2cb5e8);*/
+/* background: linear-gradient(135deg, #ffffffc2 30%,#070564e0,#1c0469); */
+/*background: linear-gradient(135deg, #ffffffc2 30%,#070564e0,#310579); */
+background: linear-gradient(135deg, #ffffffc2 30%,#6463b6e0,#4a3074);
+box-shadow: 0px 8px 100px 0px #C1BFBF;
 }
+
+#myNavbar {
+font-family: 'Ubuntu', sans-serif;
+}
+
+@media screen and (max-width: 756px) {
+	.nav-color{
+		background: linear-gradient(115deg, #ffffffc9 30%,#310579f1 0%);
+		box-shadow: 0 0 8px;
+	}
+	
+	.a-nav {
+		width: 100%;
+		text-decoration: none;
+	}
+
+	.a-nav:hover {
+		color: black !important;
+		background-color:#ffffff8f;
+	}
+}
+
 
 .abs-center {
   position: absolute;
@@ -48,9 +71,8 @@ p {
 
 h2 {
   color: #b2b2b2;
+  font-size: 32px;
   margin-bottom: 20px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 40px;
 }
 
 h3 {

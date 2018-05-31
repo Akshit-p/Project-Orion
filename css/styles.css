@@ -247,3 +247,23 @@ hr {
 	margin: 200px 0 100px 16%;
 	width: 75%;
 }
+
+.contactbox {
+	margin: 0 auto !important;
+}
+
+.textarea {
+	margin-left: 6.5% !important;
+}
+
+#submit {
+	margin-left: 43% !important;
+	margin-top: 8px !important;
+	font-family: sans-serif !important;
+	font-style: normal !important;
+	font-size: 14pt !important;
+}
+
+#submit:hover {
+	background-color: green;
+}

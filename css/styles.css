@@ -5,7 +5,8 @@
 	src: local('Bebas Neue'), url('../BebasNeue.woff') format('woff');
 }
 html {
-	height: 100%;
+	position: relative;
+	min-height: 100%;
 }
 body {
 	padding-top: 120px;
@@ -97,9 +98,10 @@ i:hover {
 	box-sizing: border-box;
 	width: 100%;
 	text-align: center;
-
+	position: absolute;
+	bottom: 0;
 	padding: 45px;
-	margin-top: 80px;
+	height: 225px;
 }
 
 .footer .name{
@@ -190,9 +192,13 @@ footer a:hover{
 
 .mainc {
 	text-align: center;
+	position: fixed;
+	width:100%;
+	height:100%;
 }
 
-.textcontainer p{
+.textcontainer h1{
+	margin-left: 75%;
 	color: white;
 	font-family: 'Bebas Neue', 'Ubuntu', sans-serif;
 	line-height: .8;
@@ -205,4 +211,8 @@ footer a:hover{
     -webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	margin-top: 275px;
+}
+
+body > .container {
+	padding-top: 60px;
 }

@@ -9,6 +9,7 @@ html {
 	min-height: 100%;
 }
 body {
+	overflow-x: hidden;
 	padding-top: 120px;
 	padding-bottom: 120px;
 	font-family: 'Ubuntu', sans-serif;
@@ -266,4 +267,13 @@ hr {
 
 #submit:hover {
 	background-color: green;
+}
+
+.video-container {
+	margin: 50px auto 0 525px !important;
+}
+
+.video-container iframe {
+	width: 65% !important;
+	height: 50% !important;
 }

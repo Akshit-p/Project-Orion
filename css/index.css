@@ -160,3 +160,15 @@ html,body {
        text-decoration: none;
    }
 
+.header-main {
+    color: #b2b2b2;
+	font-family: 'Bebas Neue', sans-serif;
+	font-weight: 200;
+	font-size: 35pt;
+}
+
+.info {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-image: url("../img/what-the-hex.png");
+}

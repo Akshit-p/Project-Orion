@@ -45,27 +45,41 @@
 	<div class="container mainAbout">
 		<div class="textbox" style="float:left; width:500px;">
 			<h2 class="aboutHeader">Who are we?</h1>
+			<hr class="aboutbar" />
 			<p class="bodytext">The Last Straw is a student-led campaign dedicated to eliminating the use of plastic straws in the University District. We want to promote the use of alternatives to plastic straws in order to do what we can to help our environment. Although we are currently a smaller organization, we believe every bit of help can contribute greatly to our environment as our message will be spread to more people that could potentially create their own organizations that work towards using less plastic.</p>
 		</div>
 		<div class="textbox" style="float:right; width:500px;">
 			<h2 class="aboutHeader">Why do we care?</h2>
+			<hr class="aboutbar" />
 			<p class="bodytext">Everyday, over 500 million plastic straws are discarded in the United States. The issue with plastic is that it isn’t biodegradable. This means it ends up getting ingested by marine and land animals, and back into our food chain. As The Last Straw, we want to promote the use of alternatives to plastic straws in order to do what we can to help our environment. Although we are currently a smaller organization, we believe every bit of help can contribute greatly to our environment as our message will be spread to more people that could potentially create their own organizations that work towards using less plastic.</p>
+			<script>
+				$(function onclick()
+				{
+					$(".readmore").click(function(){
+						window.location='https://medium.com/@navedtk09/why-we-care-c1761031181'
+					});
+				});
+			</script>
+			<button type="submit" class="readmore"> Read More</button>
 		</div>
 		<div style="clear: both;"></div>
 	</div>
+	<div id="aboutvid" class="video-container">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/EhFgLW4uarM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	</div>
 
 	<footer class="nav-color footer">
-		<div class="container">
-			<p class="motto">#BeStrawless</p>
-			<div class="links">
-				<a href="https://www.facebook.com/The-Last-Straw-780448742165911/"><i class="fab fa-facebook-square"></i></a>
-				<a href="https://www.instagram.com/uwthelaststraw/"><i class="fab fa-instagram"></i></a>
-				<a href="https://medium.com/@navedtk09/why-we-care-c1761031181"><i class="fab fa-medium"></i></a>
-				<i class="fab fa-snapchat-square"></i>
+			<div class="container">
+				<p class="motto">#BeStrawless</p>
+				<div class="links">
+					<a href="https://www.facebook.com/The-Last-Straw-780448742165911/"><i class="fab fa-facebook-square"></i></a>
+					<a href="https://www.instagram.com/uwthelaststraw/"><i class="fab fa-instagram"></i></a>
+					<a href="https://medium.com/@navedtk09/why-we-care-c1761031181"><i class="fab fa-medium"></i></a>
+					<i class="fab fa-snapchat-square"></i>
+				</div>
+				<a class="contact" href="./contact.html">Contact Us</a>
 			</div>
-			<a href="./contact.html">Contact Us</a>
-		</div>
-	</footer>
+		</footer>
 </body>
 
 </html>

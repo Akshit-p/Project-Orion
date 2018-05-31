@@ -69,8 +69,8 @@ body {
 .aboutHeader {
 	color: #b2b2b2;
 	font-family: 'Bebas Neue', sans-serif;
-	font-weight: 300;
-	font-size: 50pt;
+	font-weight: 200;
+	font-size: 35pt;
 }
 
 .bodytext {
@@ -81,7 +81,12 @@ body {
 
 .mainAbout {
 	width: 1200px;
-	margin: 0 auto;
+	margin: auto 40% auto 22%;
+}
+
+.aboutbar {
+	background-color: black;
+	height: 5px;
 }
 
 .mainHeader {
@@ -91,7 +96,7 @@ body {
 	text-align: center;
 	font-size: 60pt;
 	margin-top: 15px;
-	margin-bottom: 50px;
+
 }
 
 #submit {
@@ -237,4 +242,8 @@ hr {
 
 #curator-feed a {
 	font-family: 'Ubuntu';
+}
+#aboutvid {
+	margin: 200px 0 100px 16%;
+	width: 75%;
 }
